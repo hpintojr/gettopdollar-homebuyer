@@ -6,13 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // New colors based on the old "Max Cash Offer" site
-        brandPrimary: "#fcb614",       // Main Orange/Yellow for CTA/Accent
-        brandPrimaryDark: "#f68e1e",   // Darker Orange for gradient consistency
-        brandDark: "#1c2d37",         // Dark Blue/Gray for Hero/Block backgrounds
-        brandText: "#394755",         // Dark Text Color (from old site a tag)
-        brandLight: "#f4f6fb",        // Light Gray for form/testimonial boxes
-        brandOffWhite: "#f7faf9"      // Original off-white (keep for body background)
+        // Reverting to original GetTopDollar Home Buyer green/blue scheme
+        brandPrimary: "#38b48b",      // Main Green for CTA/Accent
+        brandPrimaryDark: "#2d9876",  // Slightly darker green for hover/gradient effect
+        brandBlue: "#1e88e5",         // The secondary blue from original branding
+        brandDark: "#1c2d37",         // Keeping the dark background for Hero (from Max Cash Offer styling)
+        brandText: "#394755",         // Dark Text Color
+        brandLight: "#f4f6fb",        // Light Gray for boxes/form backgrounds
+        brandOffWhite: "#f7faf9"      // Original off-white for body background
       }
     }
   },

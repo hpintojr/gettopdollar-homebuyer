@@ -62,7 +62,7 @@ export default function ContactForm() {
 
       <div>
         <button type="submit" disabled={loading}
-          className="w-full inline-flex justify-center items-center px-8 py-4 rounded-lg bg-brandPrimary text-brandDark font-bold text-xl transition-all hover:bg-brandPrimaryDark hover:text-white">
+          className="w-full inline-flex justify-center items-center px-8 py-4 rounded-lg bg-brandPrimary text-white font-bold text-xl transition-all hover:bg-brandPrimaryDark shadow-xl shadow-brandPrimary/30">
           {loading ? "Submitting..." : "Submit"}
         </button>
       </div>

@@ -8,15 +8,15 @@ import Footer from "../components/Footer";
 
 function OurProcess() {
   const items = [
-    { title: "Reach Out", desc: "Fill out the quick form or give us a call." },
-    { title: "Receive Your Offer", desc: "We assess your property and present a no-obligation cash offer—fast and fair." },
-    { title: "Close on Your Terms", desc: "You pick the closing date. Walk away with cash, no stress, no surprises." }
+    { title: "Step 1: Contact Us", desc: "Fill out the quick form or call us to tell us about your property. It’s free and non-obligatory." },
+    { title: "Step 2: Get Your Offer", desc: "We assess your home and present a fair, no-obligation cash offer within 24-48 hours." },
+    { title: "Step 3: Get Paid", desc: "Close on your preferred date at a local title company and walk away with cash in hand." }
   ];
 
   return (
     <section id="our-process" className="max-w-6xl mx-auto px-4 py-16">
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
-        <span className="text-brandPrimary">How It Works:</span> Simple 3-Step Process
+        <span className="text-brandPrimary">Our Simple</span> 3-Step Selling Process
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {items.map((it, index) => (
@@ -36,25 +36,25 @@ function OurProcess() {
 function Comparison() {
   return (
     <section id="comparison" className="bg-brandOffWhite py-16">
-      <div className="max-w-6xl mx-auto px-4 text-center text-brandDark">
-        <h2 className="text-4xl font-bold mb-8">Other Company VS. <span className="text-brandPrimary">Max Cash Offer Home Buyer</span></h2>
+      <div className="max-w-6xl mx-auto px-4 text-center text-brandText">
+        <h2 className="text-4xl font-bold mb-8">Selling with a Realtor VS. Selling to <span className="text-brandPrimary">GetTopDollar Home Buyer</span></h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-8 bg-brandLight rounded-xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-4">Other Company</h3>
+          <div className="p-8 bg-white rounded-xl shadow-md">
+            <h3 className="text-2xl font-semibold mb-4 text-brandDark">Selling with a Realtor</h3>
             <ul className="text-left space-y-4">
-                <li>❌ Agent Fees & Commissions</li>
-                <li>❌ Lengthy Process (Months)</li>
-                <li>❌ Unreliable Offers</li>
-                <li>❌ Stressful Showings</li>
+                <li>❌ Pay 5-6% in agent commissions and fees.</li>
+                <li>❌ Process takes 30-90+ days.</li>
+                <li>❌ Requires cleaning, staging, and open houses.</li>
+                <li>❌ Offers are contingent on financing and inspection.</li>
             </ul>
           </div>
-          <div className="p-8 bg-brandPrimary/70 rounded-xl shadow-xl text-brandDark">
-            <h3 className="text-2xl font-semibold mb-4">Max Cash Offer Home Buyer</h3>
+          <div className="p-8 bg-brandPrimary/70 rounded-xl shadow-xl text-white">
+            <h3 className="text-2xl font-semibold mb-4">GetTopDollar Home Buyer</h3>
             <ul className="text-left space-y-4">
-                <li>✅ Zero Agent Fees</li>
-                <li>✅ Fast Closing (7 Days)</li>
-                <li>✅ Guaranteed Cash Offer</li>
-                <li>✅ Sell As-Is, No Showings</li>
+                <li>✅ Zero commissions or fees—we pay closing costs.</li>
+                <li>✅ Guaranteed closing in as little as 7 days.</li>
+                <li>✅ Sell entirely As-Is—no cleaning or repairs needed.</li>
+                <li>✅ Fast, firm, non-contingent cash offer.</li>
             </ul>
           </div>
         </div>
@@ -68,12 +68,12 @@ function Testimonials() {
     <section id="testimonials" className="py-16">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-brandDark mb-12">
-          What Our <span className="text-brandPrimary">Happy Sellers</span> Are Saying
+          What Our <span className="text-brandPrimary">Satisfied Clients</span> Are Saying
         </h2>
         {/* Simple Placeholder for the complex Testimonial Slider */}
         <div className="p-8 bg-brandLight rounded-xl text-brandText shadow-md max-w-xl mx-auto">
-            <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! They closed in less than two weeks.”</p>
-            <p className="font-semibold text-brandPrimary">— Danielle M., Austin, TX</p>
+            <p className="italic mb-4 text-xl">“The process was smooth, and the offer was fair. We closed quickly and avoided all the hassle of a traditional sale.”</p>
+            <p className="font-semibold text-brandPrimary">— Sarah L., Dallas, TX</p>
         </div>
       </div>
     </section>
@@ -105,10 +105,10 @@ export default function Home() {
               {/* Left Side: Headline and Subtext */}
               <div className="md:flex-1 text-center md:text-left text-white mb-8 md:mb-0">
                 <h3 className="text-4xl font-extrabold leading-tight">
-                  Sell Your Home <span className="text-brandPrimary">Fast for Maximum Cash</span>
+                  Ready for a <span className="text-brandPrimary">Fast, Fair, and Clean Closing</span>?
                 </h3>
                 <p className="text-xl mt-4 max-w-xl md:max-w-full">
-                  No Repairs. No Commissions. Just a Fair, Fast Offer—You Pick the Closing Date.
+                  Sell on your terms. Get your no-obligation cash offer today.
                 </p>
                 <p className="text-md mt-2 italic text-brandLight">
                   Just fill out the quick form below— no pressure, no commitment.
