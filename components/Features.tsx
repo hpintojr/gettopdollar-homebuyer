@@ -1,33 +1,33 @@
 import Image from 'next/image';
 
-// Data for the features
+// Data for the features (assuming it remains the same)
 const items = [
   { 
     title: "Cash Offers Within 24 Hours", 
     desc: "Fast evaluation and clear offer—no lengthy wait.",
-    icon: "/cash_offer.png" // Using your uploaded image
+    icon: "/cash_offer.png"
   },
   { 
     title: "We Buy As-Is", 
     desc: "No cleaning, no repairs—sell your home in any condition.",
-    icon: "/white_house.png" // Using your uploaded image
+    icon: "/white_house.png" 
   },
   { 
     title: "Zero Commissions or Hidden Fees", 
     desc: "What we offer is what you receive—complete transparency.",
-    icon: "/cross_eye.png" // Using your uploaded image
+    icon: "/cross_eye.png" 
   },
   { 
     title: "Local, Trustworthy Team", 
     desc: "No corporate layers—just straightforward, dependable service.",
-    icon: "/hands_together.png" // Using your uploaded image
+    icon: "/hands_together.png"
   }
 ];
 
 export default function Features() {
   return (
-    // Added padding-top to account for the overlapping hero image
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-48">
+    // Adjusted padding-top (e.g., md:pt-56 or md:pt-64) to ensure content isn't hidden
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-56 lg:pt-64 relative z-0"> {/* Ensure z-index is lower than hero image */}
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
@@ -58,7 +58,7 @@ export default function Features() {
                   alt={it.title} 
                   width={45} 
                   height={45} 
-                  className="w-full h-auto invert brightness-0" // Invert to make white
+                  className="w-full h-auto invert brightness-0" 
                 />
               </div>
               
