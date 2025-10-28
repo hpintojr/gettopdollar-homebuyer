@@ -79,10 +79,8 @@ export default function Hero() {
         </div>
 
         {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Updated 'top' to 100px and 'right' to -245px for md screens and up */}
-        {/* Removed lg/xl specific top/right classes */}
-        {/* Kept z-index 10 */}
-        <div className="md:absolute md:right-[-245px] md:top-[100px] md:w-auto mt-12 md:mt-0 relative z-10"> 
+        {/* Added md:mt-[50px] here */}
+        <div className="md:absolute md:right-[-245px] md:top-[100px] md:w-auto mt-12 md:mt-[50px] relative z-10"> 
            <div className="bg-transparent rounded-xl p-0">
              {/* Kept md:max-w-[52rem] */}
              <Image 
