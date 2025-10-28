@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-// Data for the features
+// Data for the features (assuming it remains the same)
 const items = [
    { 
     title: "Cash Offers Within 24 Hours", 
@@ -26,8 +26,8 @@ const items = [
 
 export default function Features() {
   return (
-    // Keep the top padding matching the desired overlap space
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[175px] relative"> 
+    // Removed specific md:pt-[175px], reverted to standard py-16
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
@@ -35,12 +35,13 @@ export default function Features() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Column 1: Image */}
         <div className="text-center">
+          {/* Removed rounded-lg and shadow-lg classes */}
           <Image 
             src="/guy_w_house.jpg" 
             alt="Man holding a model house" 
             width={555} 
             height={832} 
-            className="w-full h-auto max-w-md mx-auto rounded-lg shadow-lg" 
+            className="w-full h-auto max-w-md mx-auto" 
           />
         </div>
 
