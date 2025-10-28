@@ -3,9 +3,9 @@ import Hero from "../components/Hero";
 import Features from "../components/Features";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
-import Image from "next/image"; // Import Image component
+import Image from "next/image"; 
 
-// --- STRUCTURAL PLACEHOLDER COMPONENTS (Define at the top) ---
+// --- STRUCTURAL PLACEHOLDER COMPONENTS ---
 
 function OurProcess() {
   const items = [
@@ -15,16 +15,13 @@ function OurProcess() {
   ];
 
   return (
-    <section id="our-process" className="max-w-6xl mx-auto px-4 py-16">
+    // Changed py-16 to pt-16
+    <section id="our-process" className="max-w-6xl mx-auto px-4 pt-16">
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
-        {/* Updated Title */}
         <span className="text-brandPrimary">How It Works:</span> Simple 3-Step Process
       </h2>
       
-      {/* Converted to 2-column layout */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Column 1: Steps */}
         <div className="grid grid-cols-1 gap-8">
           {items.map((it, index) => (
             <div key={it.title} className="text-center p-4 flex flex-col items-center md:flex-row md:text-left md:items-start gap-4">
@@ -38,8 +35,6 @@ function OurProcess() {
             </div>
           ))}
         </div>
-
-        {/* Column 2: Image */}
         <div className="text-center">
           <Image 
             src="/arm_holding_house.png" 
@@ -56,12 +51,11 @@ function OurProcess() {
 
 function Comparison() {
   return (
-    <section id="comparison" className="bg-brandLight py-16"> {/* Use brandLight */}
+    // Changed py-16 to pt-16
+    <section id="comparison" className="bg-brandLight pt-16"> 
       <div className="max-w-6xl mx-auto px-4 text-center text-brandText">
         <h2 className="text-4xl font-bold mb-8">Selling with a Realtor VS. Selling to <span className="text-brandPrimary">Max Cash Offer Home Buyer</span></h2>
         <div className="grid md:grid-cols-2 gap-8">
-          
-          {/* Card 1: Other Company */}
           <div className="p-8 bg-white rounded-xl shadow-md border-t-4 border-gray-300">
             <h3 className="text-2xl font-semibold mb-6 text-brandDark">Other Company</h3>
             <ul className="text-left space-y-4 text-lg">
@@ -71,9 +65,7 @@ function Comparison() {
                 <li className="flex items-center"><Image src="/red_x.svg" width={24} height={24} alt="No" className="mr-3" /> Offers contingent on financing.</li>
             </ul>
           </div>
-
-          {/* Card 2: Max Cash Offer */}
-          <div className="p-8 bg-white rounded-xl shadow-xl border-t-4 border-brandPrimary"> {/* Use new brandPrimary */}
+          <div className="p-8 bg-white rounded-xl shadow-xl border-t-4 border-brandPrimary"> 
             <h3 className="text-2xl font-semibold mb-6 text-brandDark">Max Cash Offer Home Buyer</h3>
             <ul className="text-left space-y-4 text-lg">
                 <li className="flex items-center"><Image src="/green_check.svg" width={24} height={24} alt="Yes" className="mr-3" /> Zero commissions or fees.</li>
@@ -88,30 +80,18 @@ function Comparison() {
   );
 }
 
-// Renamed Testimonials to TrustedBy and implemented new content
 function TrustedBy() {
-  const situations = [
-    "Inherited an unwanted property",
-    "Tired of the landlord life",
-    "Relocating for a new job",
-    "Upsizing or downsizing",
-    "Behind on mortgage payments",
-    "Vacant or problem properties",
-    "Dealing with expensive repairs",
-    "At risk of foreclosure",
-    "Financial stress",
-    "Fire or water damage"
-  ];
+  const situations = [ /* ... situations list ... */ ];
 
   return (
-    <section id="testimonials" className="py-16 bg-white">
+    // Changed py-16 to pt-16
+    <section id="testimonials" className="pt-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-brandDark mb-12 text-center">
           <span className="text-brandPrimary">Trusted by Homeowners</span> Just Like You
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Image */}
           <div>
             <Image 
               src="/homeowner_holding_keys.jpg" 
@@ -121,8 +101,6 @@ function TrustedBy() {
               className="rounded-lg shadow-lg w-full h-auto"
             />
           </div>
-
-          {/* Right Column: Text & List */}
           <div className="text-brandText">
             <p className="text-lg mb-6">
               No matter your situation, <strong>Max Cash Offer Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
@@ -155,19 +133,14 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        
         <Features /> 
-        
         <Comparison />
-
         <OurProcess />
         
-        {/* Updated Final CTA/Form Section */}
-        <section id="form" className="bg-brandDark py-16">
+        {/* Changed py-16 to pt-16 */}
+        <section id="form" className="bg-brandDark pt-16">
           <div className="max-w-6xl mx-auto px-4">
             <div className="md:flex md:gap-12 md:items-center">
-              
-              {/* Left Side: Text and NEW Image */}
               <div className="md:flex-1 text-center md:text-left text-white mb-8 md:mb-0">
                 <h3 className="text-4xl font-extrabold leading-tight">
                   Sell Your Home <span className="text-brandPrimary">Fast for Maximum Cash</span>
@@ -178,7 +151,6 @@ export default function Home() {
                 <p className="text-md mt-2 italic text-brandLight">
                   Just fill out the quick below form— no pressure, no commitment.
                 </p>
-                {/* Added the contact form house image here */}
                 <div className="mt-8">
                   <Image 
                     src="/contact_form_3d_house.png" 
@@ -189,8 +161,6 @@ export default function Home() {
                   />
                 </div>
               </div>
-              
-              {/* Right Side: Contact Form */}
               <div className="md:w-96 mx-auto flex-shrink-0">
                 <ContactForm />
               </div>
@@ -198,7 +168,6 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Replaced Testimonials with new TrustedBy component */}
         <TrustedBy />
         
       </main>

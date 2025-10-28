@@ -26,9 +26,8 @@ const items = [
 
 export default function Features() {
   return (
-    // Outer div takes the full width and white background
-    <div id="why-choose-us" className="bg-white py-16"> 
-      {/* Inner container centers the content */}
+    // Changed py-16 to pt-16
+    <div id="why-choose-us" className="bg-white pt-16"> 
       <div className="max-w-6xl mx-auto px-4 relative"> 
         <h2 className="text-4xl font-bold text-brandText text-center mb-12">
           <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
