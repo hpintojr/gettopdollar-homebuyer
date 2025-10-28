@@ -5,7 +5,7 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import Image from "next/image"; 
 
-// --- STRUCTURAL PLACEHOLDER COMPONENTS ---
+// --- STRUCTURAL COMPONENTS (Restored Original Testimonials) ---
 
 function OurProcess() {
   const items = [
@@ -15,7 +15,6 @@ function OurProcess() {
   ];
 
   return (
-    // Changed py-16 to pt-16
     <section id="our-process" className="max-w-6xl mx-auto px-4 pt-16">
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">How It Works:</span> Simple 3-Step Process
@@ -51,7 +50,6 @@ function OurProcess() {
 
 function Comparison() {
   return (
-    // Changed py-16 to pt-16
     <section id="comparison" className="bg-brandLight pt-16"> 
       <div className="max-w-6xl mx-auto px-4 text-center text-brandText">
         <h2 className="text-4xl font-bold mb-8">Selling with a Realtor VS. Selling to <span className="text-brandPrimary">Max Cash Offer Home Buyer</span></h2>
@@ -80,50 +78,25 @@ function Comparison() {
   );
 }
 
-function TrustedBy() {
-  const situations = [ /* ... situations list ... */ ];
-
+// Reverted TrustedBy back to the original Testimonials component structure
+function Testimonials() {
   return (
-    // Changed py-16 to pt-16
-    <section id="testimonials" className="pt-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-brandDark mb-12 text-center">
-          <span className="text-brandPrimary">Trusted by Homeowners</span> Just Like You
+    <section id="testimonials" className="pt-16 bg-white"> {/* Assuming white bg based on original */}
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-brandDark mb-12">
+          What Our <span className="text-brandPrimary">Happy Sellers</span> Are Saying {/* Updated Title */}
         </h2>
-        
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <Image 
-              src="/homeowner_holding_keys.jpg" 
-              alt="Happy homeowner holding keys" 
-              width={550} 
-              height={746} 
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
-          </div>
-          <div className="text-brandText">
-            <p className="text-lg mb-6">
-              No matter your situation, <strong>Max Cash Offer Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
-            </p>
-            <h3 className="text-2xl font-semibold text-brandDark mb-4">
-              We’ve worked with homeowners in every kind of situation:
-            </h3>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-3">
-              {situations.map((item) => (
-                <div key={item} className="p-3 bg-brandLight rounded-md shadow-sm text-brandText">
-                  {item}
-                </div>
-              ))}
-            </div>
-            <p className="text-lg mt-6 font-semibold text-brandDark">
-              Whatever the reason — we're here to make it easy.
-            </p>
-          </div>
+        {/* Simple Placeholder - You might want a carousel here later */}
+        <div className="p-8 bg-brandLight rounded-xl text-brandText shadow-md max-w-xl mx-auto mb-16"> {/* Added mb-16 for spacing */}
+            <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! I needed to sell my home quickly due to a job relocation, and Max Cash Offer made it unbelievably easy. No showings, no repairs, and they closed in less than two weeks.”</p>
+            <p className="font-semibold text-brandPrimary">— Danielle M., Austin, TX</p>
         </div>
+         {/* Add more testimonial blocks or a carousel component here */}
       </div>
     </section>
   );
 }
+
 
 // --- Main Page Assembly ---
 
@@ -136,9 +109,11 @@ export default function Home() {
         <Features /> 
         <Comparison />
         <OurProcess />
+        {/* Added Testimonials section back */}
+        <Testimonials /> 
         
-        {/* Changed py-16 to pt-16 */}
-        <section id="form" className="bg-brandDark pt-16">
+        {/* Moved Contact Form Section to the end */}
+        <section id="form" className="bg-brandDark pt-16 pb-16"> {/* Added pb-16 for spacing before footer */}
           <div className="max-w-6xl mx-auto px-4">
             <div className="md:flex md:gap-12 md:items-center">
               <div className="md:flex-1 text-center md:text-left text-white mb-8 md:mb-0">
@@ -167,8 +142,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
-        <TrustedBy />
         
       </main>
       <Footer />
