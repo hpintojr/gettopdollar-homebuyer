@@ -2,17 +2,16 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    // Keep relative positioning context for absolute child
+    // Keep relative context, min-heights, and overflow-hidden
     <section className="bg-brandDark relative z-10 min-h-[900px] md:min-h-[1000px] lg:min-h-[1000px] xl:min-h-[1100px] overflow-hidden md:relative">
       {/* Container is relative */}
       <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row md:items-start md:gap-8 relative"> 
         
-        {/* Text Content Column */}
+        {/* Text Content Column - Z-index 20 */}
         <div className="w-full md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
-          {/* Paragraph without break */}
           <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl">
             Our straightforward process makes it easy to sell your home quickly and walk away with peace of mind.
           </p>
@@ -80,10 +79,11 @@ export default function Hero() {
         </div>
 
         {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Kept positioning relative to max-w container */}
-        <div className="md:absolute md:right-4 lg:right-8 md:top-[120px] md:w-auto lg:top-[80px] xl:top-[0px] mt-12 md:mt-0 relative z-10"> {/* Lower z-index than text */}
+        {/* Increased 'top' values by 112px. Adjusted 'right' values (e.g., md:right-16 lg:right-24) */}
+        {/* Set z-index to 10 (lower than text) */}
+        <div className="md:absolute md:right-16 lg:right-24 md:top-[232px] md:w-auto lg:top-[192px] xl:top-[112px] mt-12 md:mt-0 relative z-10"> 
            <div className="bg-transparent rounded-xl p-0">
-             {/* Re-added md:max-w-[52rem] to control size explicitly on desktop */}
+             {/* Kept md:max-w-[52rem] */}
              <Image 
                src="/view-3d-house-model.png" 
                alt="Modern House Model" 
