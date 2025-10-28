@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 // Data for the features
 const items = [
-  // ... items data ...
    { 
     title: "Cash Offers Within 24 Hours", 
     desc: "Fast evaluation and clear offer—no lengthy wait.",
@@ -27,10 +26,9 @@ const items = [
 
 export default function Features() {
   return (
-    // Adjusted top padding significantly to create 600px overlap with a 971px image
-    // (Image is 971px tall, starts at top:120px, so 971-120=851px extends below hero text container.
-    //  If 600px overlaps, then pt should be ~851px)
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[851px] relative"> 
+    // Reset top padding to 175px for medium screens and up
+    // Ensure relative positioning and lower z-index (default z-0 is fine)
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[175px] relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
