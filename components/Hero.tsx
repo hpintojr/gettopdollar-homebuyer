@@ -2,14 +2,13 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    // Keep relative position for z-index
-    <section className="bg-brandDark relative z-10 overflow-hidden"> {/* Added overflow-hidden */}
-      {/* Adjusted padding slightly if needed, ensure enough height */}
+    // Removed overflow-hidden, ensure relative positioning for z-index context
+    <section className="bg-brandDark relative z-10">
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 md:flex md:items-center md:gap-8 min-h-[700px] lg:min-h-[834px]">
         
-        {/* Text Content - Reduced width fraction */}
-        <div className="md:flex-1 md:w-5/12 lg:w-6/12"> {/* Adjusted width */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight"> {/* Slightly adjusted text size if needed */}
+        {/* Text Content */}
+        <div className="md:flex-1 md:w-6/12 lg:w-7/12"> {/* Give text slightly more space */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
           <p className="mt-6 text-white max-w-xl text-lg md:text-xl">
@@ -52,17 +51,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Column - Increased width fraction */}
-        {/* Adjusted negative margin (e.g., md:-mb-32 or md:-mb-40) and added right margin/padding if needed */}
-        {/* Using absolute positioning on larger screens for more control */}
-        <div className="mt-12 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 md:w-7/12 lg:w-6/12 xl:w-7/12 md:pl-8"> {/* Use absolute positioning */}
-           <div className="relative z-20"> {/* Ensure image stays on top */}
+        {/* Image Column */}
+        {/* - Adjusted width slightly.
+          - Added md:-mb-[600px] to make it overlap significantly.
+          - Added relative and z-20 to ensure it's on top.
+          - Removed absolute positioning.
+        */}
+        <div className="md:w-6/12 lg:w-5/12 mt-12 md:mt-0 relative z-20 md:-mb-[600px]"> 
+           <div className="bg-transparent rounded-xl p-0">
              <Image 
                src="/view-3d-house-model.png" 
                alt="Modern House Model" 
-               width={971} // Use original width
-               height={971} // Use original height
-               className="w-full h-auto max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl" // Control max size
+               width={971} 
+               height={971} 
+               // Adjusted max-w classes if needed to control apparent size
+               className="w-full h-auto max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto" 
                priority 
              />
            </div>

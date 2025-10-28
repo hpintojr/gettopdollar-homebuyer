@@ -26,8 +26,9 @@ const items = [
 
 export default function Features() {
   return (
-    // Adjusted padding-top (e.g., md:pt-56 or md:pt-64) to ensure content isn't hidden
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-56 lg:pt-64 relative z-0"> {/* Ensure z-index is lower than hero image */}
+    // Added md:pt-[600px] to create space for the overlapping image
+    // Ensure z-index is lower than hero image (default is 0)
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[600px] relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
