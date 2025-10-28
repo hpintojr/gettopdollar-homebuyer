@@ -2,18 +2,17 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    // Removed min-height and md:relative. Kept relative for z-index context. Added overflow-x-hidden for safety.
-    <section className="bg-brandDark relative z-10 overflow-x-hidden">
-      {/* Reverted max-w container to basic relative for positioning context if needed */}
-      <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 md:flex md:items-center md:gap-8 relative"> 
+    // Keep relative positioning context for absolute child
+    <section className="bg-brandDark relative z-10 min-h-[900px] md:min-h-[1000px] lg:min-h-[1000px] xl:min-h-[1100px] overflow-hidden md:relative">
+      {/* Container is relative */}
+      <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row md:items-start md:gap-8 relative"> 
         
         {/* Text Content Column */}
-        {/* Adjusted width, removed z-index */}
-        <div className="w-full md:w-7/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0"> 
+        <div className="w-full md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
-          {/* Paragraph - Removed <br /> */}
+          {/* Paragraph without break */}
           <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl">
             Our straightforward process makes it easy to sell your home quickly and walk away with peace of mind.
           </p>
@@ -80,17 +79,17 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Column */}
-        {/* Reverted to flex item, added moderate negative margin, ensure higher z-index than next section */}
-        <div className="md:w-5/12 lg:w-5/12 mt-12 md:mt-0 relative z-20 md:-mb-[175px]"> 
+        {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
+        {/* Kept positioning relative to max-w container */}
+        <div className="md:absolute md:right-4 lg:right-8 md:top-[120px] md:w-auto lg:top-[80px] xl:top-[0px] mt-12 md:mt-0 relative z-10"> {/* Lower z-index than text */}
            <div className="bg-transparent rounded-xl p-0">
+             {/* Re-added md:max-w-[52rem] to control size explicitly on desktop */}
              <Image 
                src="/view-3d-house-model.png" 
                alt="Modern House Model" 
                width={971} 
                height={971} 
-               // Allow image to size naturally within its column
-               className="w-full h-auto mx-auto" 
+               className="w-full h-auto max-w-sm sm:max-w-md md:max-w-[52rem] mx-auto" 
                priority 
              />
            </div>
