@@ -79,9 +79,9 @@ export default function Hero() {
         </div>
 
         {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Increased 'top' values by 112px. Adjusted 'right' values (e.g., md:right-16 lg:right-24) */}
+        {/* Adjusted 'top' to 150px and 'right' to -10px */}
         {/* Set z-index to 10 (lower than text) */}
-        <div className="md:absolute md:right-16 lg:right-24 md:top-[232px] md:w-auto lg:top-[192px] xl:top-[112px] mt-12 md:mt-0 relative z-10"> 
+        <div className="md:absolute md:right-[-10px] md:top-[150px] md:w-auto mt-12 md:mt-0 relative z-10"> 
            <div className="bg-transparent rounded-xl p-0">
              {/* Kept md:max-w-[52rem] */}
              <Image 
