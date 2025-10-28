@@ -1,31 +1,75 @@
+import Image from 'next/image';
+
+// Data for the features
 const items = [
-  { title: "Avoid Repairs", desc: "We buy your house entirely 'as-is,' saving you time and thousands in repair costs." },
-  { title: "No Commissions", desc: "Sell direct to us and pay zero agent commissions or hidden fees." },
-  { title: "Flexible Closing", desc: "You decide the closing date, we work around your schedule." },
-  { title: "Guaranteed Offer", desc: "Our cash offer is firm—no buyer fall-throughs or financing issues." }
+  { 
+    title: "Cash Offers Within 24 Hours", 
+    desc: "Fast evaluation and clear offer—no lengthy wait.",
+    icon: "/cash_offer.png" // Using your uploaded image
+  },
+  { 
+    title: "We Buy As-Is", 
+    desc: "No cleaning, no repairs—sell your home in any condition.",
+    icon: "/white_house.png" // Using your uploaded image
+  },
+  { 
+    title: "Zero Commissions or Hidden Fees", 
+    desc: "What we offer is what you receive—complete transparency.",
+    icon: "/cross_eye.png" // Using your uploaded image
+  },
+  { 
+    title: "Local, Trustworthy Team", 
+    desc: "No corporate layers—just straightforward, dependable service.",
+    icon: "/hands_together.png" // Using your uploaded image
+  }
 ];
 
 export default function Features() {
   return (
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16">
+    // Added padding-top to account for the overlapping hero image
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-48">
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
-        <span className="text-brandPrimary">Why Sell</span> to GetTopDollar Home Buyer?
+        <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
       
-      {/* Renders a grid of 4 columns on large screens (lg) or 2 columns on medium screens (md) */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {items.map((it) => (
-          <div 
-            key={it.title} 
-            className="bg-white rounded-lg p-6 shadow-md flex flex-col items-center text-center border-t-4 border-brandPrimary transition-shadow hover:shadow-lg"
-          >
-            {/* Checkmark icon in a green circle */}
-            <div className="w-12 h-12 flex-shrink-0 rounded-full bg-brandPrimary flex items-center justify-center text-white text-2xl font-bold mb-4">✓</div>
-            
-            <h4 className="text-xl font-semibold text-brandDark">{it.title}</h4>
-            <p className="text-brandText mt-1 text-sm">{it.desc}</p>
-          </div>
-        ))}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Column 1: Image */}
+        <div className="text-center">
+          <Image 
+            src="/guy_w_house.jpg" 
+            alt="Man holding a model house" 
+            width={555} 
+            height={832} 
+            className="w-full h-auto max-w-md mx-auto rounded-lg shadow-lg" 
+          />
+        </div>
+
+        {/* Column 2: Feature List */}
+        <div className="space-y-8">
+          {items.map((it) => (
+            <div 
+              key={it.title} 
+              className="flex items-start gap-4"
+            >
+              {/* Feature Icon */}
+              <div className="flex-shrink-0 w-20 h-20 p-4 rounded-full bg-brandPrimary flex items-center justify-center shadow-lg">
+                <Image 
+                  src={it.icon} 
+                  alt={it.title} 
+                  width={45} 
+                  height={45} 
+                  className="w-full h-auto invert brightness-0" // Invert to make white
+                />
+              </div>
+              
+              {/* Feature Text */}
+              <div>
+                <h4 className="text-2xl font-semibold text-brandDark">{it.title}</h4>
+                <p className="text-brandText mt-1 text-lg">{it.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

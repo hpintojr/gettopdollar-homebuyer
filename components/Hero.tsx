@@ -1,47 +1,49 @@
+import Image from 'next/image';
+
 export default function Hero() {
   return (
-    <section className="bg-brandDark">
-      {/* Increased padding-y (py-24) to add space above and below the content, matching the target. */}
-      <div className="max-w-6xl mx-auto px-4 py-24 md:flex md:items-center md:gap-12">
+    // Added relative position for the z-index to work
+    <section className="bg-brandDark relative z-10">
+      <div className="max-w-6xl mx-auto px-4 py-24 md:flex md:items-center md:gap-12 min-h-[700px] lg:min-h-[834px]">
+        
+        {/* Text Content */}
         <div className="md:flex-1 md:w-7/12">
-          {/* Headline - Reverting to original "GetTopDollar" headline with accent on key words */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight">
-            Sell your house <span className="text-brandPrimary">fast for top dollar</span>
+            Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
-          {/* Subtext - Reverting to original subtext */}
           <p className="mt-6 text-white max-w-xl text-xl">
-            Skip the repairs and open houses. Get a no obligation cash offer and close when you choose.
+            Our straightforward process makes it easy to sell your home quickly and walk away with peace of mind.
           </p>
 
-          {/* New Callout Section - Reverting to original GetTopDollar concept benefits */}
-          <ul className="mt-8 space-y-3 text-white text-lg">
+          {/* Updated bullet points from original site */}
+          <ul className="mt-8 space-y-4 text-white text-lg">
             <li className="flex items-start">
-              <span className="text-brandPrimary mr-2 text-xl">✓</span>
+              <span className="text-brandPrimary mr-3 text-2xl font-bold">✓</span>
               <div>
-                <span className="font-semibold text-brandPrimary">No Repairs:</span> Sell your home 100% As-Is.
+                <span className="font-semibold text-brandPrimary">Don’t like repairs?</span> We buy houses as-is.
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-brandPrimary mr-2 text-xl">✓</span>
+              <span className="text-brandPrimary mr-3 text-2xl font-bold">✓</span>
               <div>
-                <span className="font-semibold text-brandPrimary">No Commissions:</span> Avoid agent fees and hidden costs.
+                <span className="font-semibold text-brandPrimary">Want to skip agents?</span> No commissions, no listings.
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-brandPrimary mr-2 text-xl">✓</span>
+              <span className="text-brandPrimary mr-3 text-2xl font-bold">✓</span>
               <div>
-                <span className="font-semibold text-brandPrimary">Fast Closing:</span> Close in as little as 7 days, on your schedule.
+                <span className="font-semibold text-brandPrimary">Need quick money?</span> Get a same-day offer.
               </div>
             </li>
             <li className="flex items-start">
-              <span className="text-brandPrimary mr-2 text-xl">✓</span>
+              <span className="text-brandPrimary mr-3 text-2xl font-bold">✓</span>
               <div>
-                <span className="font-semibold text-brandPrimary">Cash Offer:</span> Get a firm, non-contingent offer fast.
+                <span className="font-semibold text-brandPrimary">Looking for peace of mind?</span> Sell fast and move on.
               </div>
             </li>
           </ul>
 
-          {/* CTA Buttons - "Get My Cash Offer Now" - using brandPrimary (green) and shadow */}
+          {/* CTA Button */}
           <div className="mt-12">
             <a href="#form" className="inline-block px-8 py-4 rounded-lg bg-brandPrimary text-white font-bold text-xl transition-all hover:bg-brandPrimaryDark shadow-xl shadow-brandPrimary/30">
               Get My Cash Offer Now
@@ -49,11 +51,21 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Column - set to be larger and push the text. */}
-        <div className="md:w-5/12 mt-8 md:mt-0">
+        {/* Image Column */}
+        {/* Added relative positioning and a negative margin (md:-mb-48) 
+          This makes the image "cross" into the next section on desktop.
+          Added z-20 to ensure it's on top of the next section's content.
+        */}
+        <div className="md:w-5/12 mt-12 md:mt-0 relative z-20 md:-mb-48">
           <div className="bg-transparent rounded-xl p-0">
-            {/* Keeping the image the user provided */}
-            <img src="/view-3d-house-model.png" alt="Modern House Model" className="w-full h-auto" />
+            <Image 
+              src="/view-3d-house-model.png" 
+              alt="Modern House Model" 
+              width={971} 
+              height={971} 
+              className="w-full h-auto" 
+              priority
+            />
           </div>
         </div>
       </div>
