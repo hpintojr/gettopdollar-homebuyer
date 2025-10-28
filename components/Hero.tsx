@@ -15,8 +15,7 @@ export default function Hero() {
           </h1>
           {/* Paragraph with specific line break */}
           <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl">
-            Our straightforward process makes it easy to sell your home quickly and <br /> 
-            walk away with peace of mind.
+            Our straightforward process makes it easy to sell your home quickly and <br/> walk away with peace of mind.
           </p>
 
           <ul className="mt-6 md:mt-8 space-y-4 text-white text-lg">
