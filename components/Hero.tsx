@@ -2,13 +2,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    // Replaced min-h-* with fixed h-[875px]. Kept relative and overflow-hidden.
+    // Keep relative context, fixed height, and overflow-hidden
     <section className="bg-brandDark relative z-10 h-[875px] overflow-hidden md:relative">
-      {/* Container is relative. Adjusted padding for fixed height. */}
+      {/* Container is relative */}
       <div className="max-w-6xl mx-auto px-4 h-full flex flex-col justify-center md:flex-row md:items-center md:gap-8 relative"> 
         
         {/* Text Content Column - Z-index 20 */}
-        {/* Removed py-20/md:py-32 */}
         <div className="w-full md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
@@ -80,11 +79,10 @@ export default function Hero() {
         </div>
 
         {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Adjusted 'top' and 'right' to fit within the 875px height */}
-        {/* Using bottom alignment might be easier with fixed height */}
-        {/* md:bottom-0 positions the bottom of the container at the bottom of the section */}
-        {/* md:right-[-10px] keeps the horizontal position */}
-        <div className="md:absolute md:right-[-10px] md:bottom-0 md:w-auto mt-12 md:mt-0 relative z-10"> 
+        {/* Updated 'top' to 100px and 'right' to -245px for md screens and up */}
+        {/* Removed lg/xl specific top/right classes */}
+        {/* Kept z-index 10 */}
+        <div className="md:absolute md:right-[-245px] md:top-[100px] md:w-auto mt-12 md:mt-0 relative z-10"> 
            <div className="bg-transparent rounded-xl p-0">
              {/* Kept md:max-w-[52rem] */}
              <Image 
