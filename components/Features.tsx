@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-// Data for the features (assuming it remains the same)
+// Data for the features
 const items = [
    { 
     title: "Cash Offers Within 24 Hours", 
@@ -26,8 +26,8 @@ const items = [
 
 export default function Features() {
   return (
-    // Removed specific md:pt-[175px], reverted to standard py-16
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 relative"> 
+    // Added bg-white to the section element
+    <section id="why-choose-us" className="bg-white max-w-6xl mx-auto px-4 py-16 md:pt-[175px] relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
@@ -35,7 +35,6 @@ export default function Features() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Column 1: Image */}
         <div className="text-center">
-          {/* Removed rounded-lg and shadow-lg classes */}
           <Image 
             src="/guy_w_house.jpg" 
             alt="Man holding a model house" 
