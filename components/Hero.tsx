@@ -2,19 +2,24 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
+    // Ensure relative positioning for z-index context, no overflow-hidden
     <section className="bg-brandDark relative z-10">
+      {/* Container with flex layout */}
       <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 md:flex md:items-center md:gap-8 min-h-[700px] lg:min-h-[834px]">
         
-        {/* Text Content */}
-        <div className="md:flex-1 md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16"> 
+        {/* Text Content Column */}
+        {/* Adjusted flex-basis/width to give image more room */}
+        <div className="md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0"> 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
+          {/* Paragraph with specific line break */}
           <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl">
-            Our straightforward process makes it easy to sell your home quickly and walk away with peace of mind.
+            Our straightforward process makes it easy to sell your home quickly and <br /> 
+            walk away with peace of mind.
           </p>
 
-          <ul className="mt-6 md:mt-8 space-y-4 text-white text-lg"> 
+          <ul className="mt-6 md:mt-8 space-y-4 text-white text-lg">
              <li className="flex items-start">
                <Image 
                  src="/checkmark.png" 
@@ -28,7 +33,8 @@ export default function Hero() {
                  <span className="text-white text-base">Get a same-day offer.</span> 
                </div>
              </li>
-             <li className="flex items-start">
+             {/* ... other list items ... */}
+              <li className="flex items-start">
                <Image 
                  src="/checkmark.png" 
                  alt="checkmark" 
@@ -77,15 +83,18 @@ export default function Hero() {
         </div>
 
         {/* Image Column */}
-        {/* Reduced negative margin to match desired padding */}
+        {/* Applied negative margin for overlap, relative positioning, higher z-index */}
+        {/* Adjusted width constraints slightly, maybe remove max-w if column width is enough */}
         <div className="md:w-6/12 lg:w-5/12 mt-12 md:mt-0 relative z-20 md:-mb-[175px]"> 
            <div className="bg-transparent rounded-xl p-0">
              <Image 
                src="/view-3d-house-model.png" 
                alt="Modern House Model" 
-               width={971} 
-               height={971} 
-               className="w-full h-auto max-w-sm sm:max-w-md md:max-w-[52rem] mx-auto" 
+               width={971} // Intrinsic width
+               height={971} // Intrinsic height
+               // Applied w-full h-auto, removed explicit max-width for md+
+               // Size will be dictated by the parent column width and intrinsic ratio
+               className="w-full h-auto mx-auto" 
                priority 
              />
            </div>

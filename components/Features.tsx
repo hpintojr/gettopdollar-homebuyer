@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 // Data for the features
 const items = [
-  { 
+  // ... items data ...
+   { 
     title: "Cash Offers Within 24 Hours", 
     desc: "Fast evaluation and clear offer—no lengthy wait.",
     icon: "/cash_offer.png"
@@ -26,7 +27,7 @@ const items = [
 
 export default function Features() {
   return (
-    // Reduced top padding to 175px for medium screens and up
+    // Keep the top padding matching the hero image's negative margin
     <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[175px] relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
