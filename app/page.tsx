@@ -5,7 +5,7 @@ import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
 import Image from "next/image"; 
 
-// --- STRUCTURAL COMPONENTS (Restored Original Testimonials) ---
+// --- STRUCTURAL COMPONENTS ---
 
 function OurProcess() {
   const items = [
@@ -78,16 +78,89 @@ function Comparison() {
   );
 }
 
-// Reverted TrustedBy back to the original Testimonials component structure
+// Re-added the TrustedBy component definition
+function TrustedBy() {
+  // Added id="trusted-by" for potential navigation
+  const situations = [
+    "Inherited an unwanted property",
+    "Tired of the landlord life",
+    "Relocating for a new job",
+    "Upsizing or downsizing",
+    "Behind on mortgage payments",
+    "Vacant or problem properties",
+    "Dealing with expensive repairs",
+    "At risk of foreclosure",
+    "Financial stress",
+    "Fire or water damage"
+  ];
+
+  return (
+    // Changed background to brandOffWhite to match original site section bg
+    <section id="trusted-by" className="pt-16 bg-brandOffWhite"> 
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-brandDark mb-12 text-center">
+          <span className="text-brandPrimary">Trusted by Homeowners</span> Just Like You
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Image */}
+          <div>
+            <Image 
+              src="/homeowner_holding_keys.jpg" 
+              alt="Happy homeowner holding keys" 
+              width={550} 
+              height={746} 
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+
+          {/* Right Column: Text & List */}
+          <div className="text-brandText">
+            <p className="text-lg mb-6">
+              No matter your situation, <strong>Max Cash Offer Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
+            </p>
+            <h3 className="text-2xl font-semibold text-brandDark mb-4">
+              We’ve worked with homeowners in every kind of situation:
+            </h3>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+              {situations.map((item) => (
+                <div key={item} className="p-3 bg-white rounded-md shadow-sm text-brandText border border-gray-200"> {/* Changed bg to white */}
+                  {item}
+                </div>
+              ))}
+            </div>
+            <p className="text-lg mt-6 font-semibold text-brandDark">
+              Whatever the reason — we're here to make it easy.
+            </p>
+            <p className="text-lg mt-4"> {/* Added extra paragraph */}
+              Get a fair, no-obligation cash offer and move forward on your terms.
+            </p>
+            {/* Optional Buttons like original site */}
+            <div className="mt-8 flex gap-4">
+               <a href="#form" className="inline-block px-6 py-3 rounded-lg bg-brandPrimary text-white font-bold text-lg transition-all hover:bg-brandPrimaryDark shadow-md">
+                 Get My Cash Offer
+               </a>
+               <a href="tel:+18436706219" className="inline-block px-6 py-3 rounded-lg border border-brandText text-brandText font-bold text-lg hover:bg-brandLight">
+                 843-670-6219
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+// Kept original Testimonials structure
 function Testimonials() {
   return (
-    <section id="testimonials" className="pt-16 bg-white"> {/* Assuming white bg based on original */}
+    <section id="testimonials" className="pt-16 bg-white"> 
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-brandDark mb-12">
-          What Our <span className="text-brandPrimary">Happy Sellers</span> Are Saying {/* Updated Title */}
+          What Our <span className="text-brandPrimary">Happy Sellers</span> Are Saying 
         </h2>
-        {/* Simple Placeholder - You might want a carousel here later */}
-        <div className="p-8 bg-brandLight rounded-xl text-brandText shadow-md max-w-xl mx-auto mb-16"> {/* Added mb-16 for spacing */}
+        <div className="p-8 bg-brandLight rounded-xl text-brandText shadow-md max-w-xl mx-auto mb-16"> 
             <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! I needed to sell my home quickly due to a job relocation, and Max Cash Offer made it unbelievably easy. No showings, no repairs, and they closed in less than two weeks.”</p>
             <p className="font-semibold text-brandPrimary">— Danielle M., Austin, TX</p>
         </div>
@@ -109,11 +182,12 @@ export default function Home() {
         <Features /> 
         <Comparison />
         <OurProcess />
-        {/* Added Testimonials section back */}
+        {/* Added TrustedBy section before Testimonials */}
+        <TrustedBy /> 
         <Testimonials /> 
         
-        {/* Moved Contact Form Section to the end */}
-        <section id="form" className="bg-brandDark pt-16 pb-16"> {/* Added pb-16 for spacing before footer */}
+        {/* Kept Contact Form Section at the end */}
+        <section id="form" className="bg-brandDark pt-16 pb-16">
           <div className="max-w-6xl mx-auto px-4">
             <div className="md:flex md:gap-12 md:items-center">
               <div className="md:flex-1 text-center md:text-left text-white mb-8 md:mb-0">

@@ -8,7 +8,8 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-4 h-full flex flex-col justify-center md:flex-row md:items-center md:gap-8 relative"> 
         
         {/* Text Content Column - Z-index 20 */}
-        <div className="w-full md:w-6/12 lg:w-7/12 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
+        {/* Changed lg:w-7/12 to lg:w-4/5 */}
+        <div className="w-full md:w-6/12 lg:w-4/5 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
@@ -79,7 +80,7 @@ export default function Hero() {
         </div>
 
         {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Added md:mt-[50px] here */}
+        {/* Adjusted positioning */}
         <div className="md:absolute md:right-[-245px] md:top-[100px] md:w-auto mt-12 md:mt-[50px] relative z-10"> 
            <div className="bg-transparent rounded-xl p-0">
              {/* Kept md:max-w-[52rem] */}
