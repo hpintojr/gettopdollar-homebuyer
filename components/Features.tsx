@@ -27,8 +27,10 @@ const items = [
 
 export default function Features() {
   return (
-    // Keep the top padding matching the hero image's negative margin
-    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[175px] relative"> 
+    // Adjusted top padding significantly to create 600px overlap with a 971px image
+    // (Image is 971px tall, starts at top:120px, so 971-120=851px extends below hero text container.
+    //  If 600px overlaps, then pt should be ~851px)
+    <section id="why-choose-us" className="max-w-6xl mx-auto px-4 py-16 md:pt-[851px] relative"> 
       <h2 className="text-4xl font-bold text-brandText text-center mb-12">
         <span className="text-brandPrimary">Why Choose</span> Max Cash Offer Home Buyer?
       </h2>
