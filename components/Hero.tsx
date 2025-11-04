@@ -28,7 +28,8 @@ export default function Hero() {
                  className="mr-3 mt-1 flex-shrink-0" 
                />
                <div>
-                 <span className="font-semibold text-brandPrimary block leading-snug">Need quick money?</span> 
+                 {/* --- UPDATED CLASSES HERE --- */}
+                 <span className="font-black text-brandPrimary block leading-snug text-2xl">Need quick money?</span> 
                  <span className="text-white text-base">Get a same-day offer.</span> 
                </div>
              </li>
@@ -41,7 +42,8 @@ export default function Hero() {
                  className="mr-3 mt-1 flex-shrink-0"
                />
                <div>
-                 <span className="font-semibold text-brandPrimary block leading-snug">Don’t like repairs?</span>
+                 {/* --- UPDATED CLASSES HERE --- */}
+                 <span className="font-black text-brandPrimary block leading-snug text-2xl">Don’t like repairs?</span>
                  <span className="text-white text-base">We buy houses as-is.</span>
                </div>
              </li>
@@ -54,7 +56,8 @@ export default function Hero() {
                  className="mr-3 mt-1 flex-shrink-0"
                />
                <div>
-                 <span className="font-semibold text-brandPrimary block leading-snug">Want to skip agents?</span>
+                 {/* --- UPDATED CLASSES HERE --- */}
+                 <span className="font-black text-brandPrimary block leading-snug text-2xl">Want to skip agents?</span>
                  <span className="text-white text-base">No commissions, no listings, no delays.</span>
                </div>
              </li>
@@ -67,7 +70,8 @@ export default function Hero() {
                   className="mr-3 mt-1 flex-shrink-0"
                 />
                <div>
-                 <span className="font-semibold text-brandPrimary block leading-snug">Looking for peace of mind?</span>
+                 {/* --- UPDATED CLASSES HERE --- */}
+                 <span className="font-black text-brandPrimary block leading-snug text-2xl">Looking for peace of mind?</span>
                  <span className="text-white text-base">Sell fast and move on with ease.</span>
                </div>
              </li>
