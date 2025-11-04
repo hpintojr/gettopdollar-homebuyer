@@ -1,7 +1,7 @@
 // app/terms-of-use/page.tsx
-
 import React from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer'; // Added missing Footer import
 
 export default function TermsOfUse() {
   return (
@@ -73,7 +73,7 @@ export default function TermsOfUse() {
             your use of: (a) any external site linked to the Service, (b) Vendor
             Information, or (c) Vendor products or services. Statements made on
             the Service Area concerning the products or services of Elevated Home
-            Buyer Holdings, LLC do not constitute an offer, but are merely
+Access, LLC do not constitute an offer, but are merely
             solicitations of an offer.
           </p>
           <p>
@@ -108,10 +108,21 @@ export default function TermsOfUse() {
             displayed, sold, transmitted, published, broadcast, rewritten for
             broadcast or publication or redistributed in any medium, whether now
             known or hereafter created. The foregoing prohibition includes, but
-            is not limited to “screen scraping” or “database scraping” to obtain
+is not limited to “screen scraping” or “database scraping” to obtain
             lists of users or other Information. Nor may any portion of the
             Information or other materials be stored in a computer or distributed
             over any network, except that you may download or print one copy of
             pages strictly for personal and non-commercial use; however, any
             print out of any page of the Website or portion thereof, must include
-            Elev
+            {/* THE REST OF YOUR LEGAL TEXT IS MISSING.
+              Both your prompt and the file I have are cut off here.
+              You must paste the rest of your terms of use content here.
+            */}
+          </p>
+
+        </div>
+      </main>
+      <Footer /> {/* Added missing Footer component */}
+    </div>
+  );
+}
