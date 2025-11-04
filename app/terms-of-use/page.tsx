@@ -1,7 +1,7 @@
 // app/terms-of-use/page.tsx
 
-import Header from "../../components/Header"; // Corrected path
-import Footer from "../../components/Footer"; // Corrected path
+import React from 'react';
+import Header from '@/components/Header';
 
 export default function TermsOfUse() {
   return (
