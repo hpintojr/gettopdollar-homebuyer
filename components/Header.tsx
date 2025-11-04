@@ -4,7 +4,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           {/* Logo (Using M for Max) */}
-          <div className="w-10 h-10 rounded-md bg-brandPrimary flex items-center justify-center text-white font-bold text-xl">M</div>
+          <div className="w-10 h-10 rounded-md bg-brandPrimary flex items-center justify-center text-white font-bold text-xl">G</div>
           <div>
             <div className="text-lg font-bold text-gray-800">Get Top Dollar Home Buyer</div>
             <div className="text-sm text-gray-500">Sell fast. Close clean.</div>
