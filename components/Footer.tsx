@@ -9,15 +9,7 @@ export default function Footer() {
         {/* New Disclosure Text */}
         <div className="max-w-3xl mx-auto text-xs text-gray-500 space-y-2 mb-6">
           <p>
-            I agree to the{" "}
-            <Link href="/terms-of-use" className="underline hover:text-brandPrimary">
-              Terms & Conditions
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy-policy" className="underline hover:text-brandPrimary">
-              Privacy Policy
-            </Link>
-            . By submitting this form, you consent to receive SMS messages and/or
+            By submitting a form on this site, you consent to receive SMS messages and/or
             calls and/or emails from Elevated Home Buyer Holdings, LLC. Message
             frequency varies. To unsubscribe. follow the instructions provided in
             our communications. Msg & data rates may apply for SMS. Your
