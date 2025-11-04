@@ -52,7 +52,7 @@ function Comparison() {
   return (
     <section id="comparison" className="bg-brandLight pt-16"> 
       <div className="max-w-6xl mx-auto px-4 text-center text-brandText">
-        <h2 className="text-4xl font-bold mb-8">Selling with a Realtor VS. Selling to <span className="text-brandPrimary">Max Cash Offer Home Buyer</span></h2>
+        <h2 className="text-4xl font-bold mb-8">Selling with a Realtor VS. Selling to <span className="text-brandPrimary">Get Top Dollar Home Buyer</span></h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="p-8 bg-white rounded-xl shadow-md border-t-4 border-gray-300">
             <h3 className="text-2xl font-semibold mb-6 text-brandDark">Other Company</h3>
@@ -64,7 +64,7 @@ function Comparison() {
             </ul>
           </div>
           <div className="p-8 bg-white rounded-xl shadow-xl border-t-4 border-brandPrimary"> 
-            <h3 className="text-2xl font-semibold mb-6 text-brandDark">Max Cash Offer Home Buyer</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-brandDark">Get Top Dollar Home Buyer</h3>
             <ul className="text-left space-y-4 text-lg">
                 <li className="flex items-center"><Image src="/green_check.svg" width={24} height={24} alt="Yes" className="mr-3" /> Zero commissions or fees.</li>
                 <li className="flex items-center"><Image src="/green_check.svg" width={24} height={24} alt="Yes" className="mr-3" /> Guaranteed closing (as fast as 7 days).</li>
@@ -117,7 +117,7 @@ function TrustedBy() {
           {/* Right Column: Text & List */}
           <div className="text-brandText">
             <p className="text-lg mb-6">
-              No matter your situation, <strong>Max Cash Offer Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
+              No matter your situation, <strong>Get Top Dollar Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
             </p>
             <h3 className="text-2xl font-semibold text-brandDark mb-4">
               We’ve worked with homeowners in every kind of situation:
@@ -161,7 +161,7 @@ function Testimonials() {
           What Our <span className="text-brandPrimary">Happy Sellers</span> Are Saying 
         </h2>
         <div className="p-8 bg-brandLight rounded-xl text-brandText shadow-md max-w-xl mx-auto mb-16"> 
-            <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! I needed to sell my home quickly due to a job relocation, and Max Cash Offer made it unbelievably easy. No showings, no repairs, and they closed in less than two weeks.”</p>
+            <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! I needed to sell my home quickly due to a job relocation, and Get Top Dollar made it unbelievably easy. No showings, no repairs, and they closed in less than two weeks.”</p>
             <p className="font-semibold text-brandPrimary">— Danielle M., Austin, TX</p>
         </div>
          {/* Add more testimonial blocks or a carousel component here */}

@@ -29,8 +29,8 @@ export default function PrivacyPolicy() {
           <p>
             When you order or register on our site, we may ask you to provide
             your name, email address, mailing address, or phone number. However,
-            you can visit our site anonymously. If Elevated Home Buyer Holdings,
-            LLC is acquired by or merged with another company, we will notify you
+            you can visit our site anonymously. If Get Top Dollar Home Buyer
+			is acquired by or merged with another company, we will notify you
             before transferring your information, which will become subject to a
             different privacy policy.
           </p>
@@ -119,8 +119,8 @@ export default function PrivacyPolicy() {
             site. This may mean advertising to previous visitors who have not
             completed a task on our site, such as using the contact form to make
             an inquiry. Third-party vendors, including Google, use cookies to
-            serve ads based on a visitor’s past visits to the Elevated Home Buyer
-            Holdings, LLC Compliance with California Online Privacy Protection
+            serve ads based on a visitor’s past visits to the Get Top Dollar Home 
+			Buyer Compliance with California Online Privacy Protection
             Act We respect your privacy and have taken necessary measures to
             comply with the California Online Privacy Protection Act. We will not
             disclose your personal information to third parties without your
@@ -166,8 +166,8 @@ not share it with external parties unless necessary to help resolve
             to the contact information on our website.
           </p>
           <p>
-            By completing a form on our website, you give consent to Elevated
-            Home Buyer Holdings, LLC to send SMS. SMS message frequency varies.
+            By completing a form on our website, you give consent to Get Top Dollar Home 
+			Buyer to send SMS. SMS message frequency varies.
             Standard message and data rates may apply. For HELP, text (801)
             660-2281. Text STOP to unsubscribe.
           </p>

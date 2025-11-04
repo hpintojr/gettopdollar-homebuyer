@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'GetTopDollar Home Buyer',
+  title: 'Get Top Dollar Home Buyer',
   description: 'Sell your house fast for top dollar with no repairs or commissions.',
 };
 

@@ -6,7 +6,7 @@ export default function Header() {
           {/* Logo (Using M for Max) */}
           <div className="w-10 h-10 rounded-md bg-brandPrimary flex items-center justify-center text-white font-bold text-xl">M</div>
           <div>
-            <div className="text-lg font-bold text-gray-800">Max Cash Offer Home Buyer</div>
+            <div className="text-lg font-bold text-gray-800">Get Top Dollar Home Buyer</div>
             <div className="text-sm text-gray-500">Sell fast. Close clean.</div>
           </div>
         </div>

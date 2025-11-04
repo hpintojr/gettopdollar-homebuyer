@@ -11,23 +11,23 @@ export default function TermsOfUse() {
         <div className="max-w-4xl mx-auto px-4 prose lg:prose-lg text-brandText">
           <h1>Terms of Use</h1>
           <p>
-            BY USING ANY WEBSITE, MOBILE APP OR SERVICE OF Elevated Home Buyer
-            Holdings, LLC. (“Elevated Home Buyer Holdings, LLC”) YOU AGREE TO
-            ABIDE BY THESE TERMS OF USE BETWEEN YOU AND Elevated Home Buyer
-            Holdings, LLC, WHICH INCLUDE THE REFERENCED PRIVACY POLICY
+            BY USING ANY WEBSITE, MOBILE APP OR SERVICE OF Get Top Dollar Home Buyer. 
+			(“Get Top Dollar Home Buyer”) YOU AGREE TO
+            ABIDE BY THESE TERMS OF USE BETWEEN YOU AND Get Top Dollar Home Buyer, 
+			WHICH INCLUDE THE REFERENCED PRIVACY POLICY
             (“AGREEMENT”). IF YOU DO NOT AGREE TO BE BOUND BY THIS AGREEMENT, YOU
-            ARE NOT AUTHORIZED TO USE ANY Elevated Home Buyer Holdings, LLC
-            WEBSITE OR TO OBTAIN ANY SERVICES FROM Elevated Home Buyer Holdings,
+            ARE NOT AUTHORIZED TO USE ANY Get Top Dollar Home Buyer
+            WEBSITE OR TO OBTAIN ANY SERVICES FROM Get Top Dollar Home Buyer,
             LLC.
           </p>
           <p>
-            The Elevated Home Buyer Holdings, LLC websites and mobile apps
-            (collectively, “Websites”; and individually, “Website”). Elevated
-            Home Buyer Holdings, LLC provides numerous services, including as
+            The Get Top Dollar Home Buyer websites and mobile apps
+            (collectively, “Websites”; and individually, “Website”). 
+			Get Top Dollar Home Buyer provides numerous services, including as
             referenced on the Websites (“Services”).
           </p>
           <p>
-            Elevated Home Buyer Holdings, LLC reserves the right, at its
+            Get Top Dollar Home Buyer reserves the right, at its
             discretion, to revise the terms of this Agreement and/or change,
             suspend, discontinue or modify any aspect of any Website. Such
             modifications may include, without limitation, changes in content, in
@@ -39,8 +39,8 @@ export default function TermsOfUse() {
 
           <h2>1. CERTIFICATION OF USER.</h2>
           <p>
-            By using or attempting to use this Website, you certify to Elevated
-            Home Buyer Holdings, LLC that you are a resident of the United States
+            By using or attempting to use this Website, you certify to Get Top 
+			Dollar Home Buyer that you are a resident of the United States
             or otherwise authorized to conduct business in the United States, are
             at least 18 years of age or older and have the legal capacity to
             enter into this Agreement.
@@ -52,28 +52,28 @@ export default function TermsOfUse() {
             aspects of the Website and Services including, without limitation,
             text, data, photos, graphics and/or video or any information
             whatsoever obtained through the Website (collectively referred to
-            herein as “Information”), Elevated Home Buyer Holdings, LLC’ computers
+            herein as “Information”), Get Top Dollar Home Buyer’ computers
             or network and any subscription or software, product, service, or
-            information provided by Elevated Home Buyer Holdings, LLC.
+            information provided by Get Top Dollar Home Buyer.
           </p>
           <p>
-            <strong>2.2 Vendor Content</strong> – Elevated Home Buyer Holdings,
+            <strong>2.2 Vendor Content</strong> – Get Top Dollar Home Buyer,
             LLC has entered into contractual relationships with certain vendors,
             sponsors, and advertisers of products or services (“Vendors”),
-            pursuant to which Elevated Home Buyer Holdings, LLC may link to or
+            pursuant to which Get Top Dollar Home Buyer may link to or
             display information, advertisements, discounts, products, goods, or
-            services offered by the Vendors (“Vendor Content”). Elevated Home
-            Buyer Holdings, LLC does not guarantee the availability or accuracy of
+            services offered by the Vendors (“Vendor Content”). Get Top Dollar 
+			Home Buyer does not guarantee the availability or accuracy of
             any such Vendor Content or offers, nor does it endorse, guarantee nor
             insure any Vendor products or services.
           </p>
           <p>
-            <strong>2.3</strong> Elevated Home Buyer Holdings, LLC shall not be
+            <strong>2.3</strong> Get Top Dollar Home Buyer shall not be
             held liable, directly or indirectly, for any loss or damage caused by
             your use of: (a) any external site linked to the Service, (b) Vendor
             Information, or (c) Vendor products or services. Statements made on
-            the Service Area concerning the products or services of Elevated Home
-Access, LLC do not constitute an offer, but are merely
+            the Service Area concerning the products or services of Get Top Dollar Home Buyer
+			do not constitute an offer, but are merely
             solicitations of an offer.
           </p>
           <p>
@@ -84,9 +84,9 @@ Access, LLC do not constitute an offer, but are merely
             identification and password. You agree to maintain the
             confidentiality of such registration information, be the sole user of
             such registration and use your registration solely to access the
-            Website and to obtain Services. Elevated Home Buyer Holdings, LLC
+            Website and to obtain Services. Get Top Dollar Home Buyer
             reserves the right to monitor your use of the registration and to
-            discontinue you it at any time in Elevated Home Buyer Holdings, LLC
+            discontinue you it at any time in Get Top Dollar Home Buyer
             sole discretion. If you believe that your registration has been
             compromised, you must promptly change your registration information
             and notify us immediately.
@@ -95,12 +95,12 @@ Access, LLC do not constitute an offer, but are merely
           <h2>3. LIMITATIONS ON USE AND USER SUBMISSIONS.</h2>
           <p>
             <strong>3.1. Copyright, Patent and Trademark Notice.</strong> All
-            content of the Website provided by Elevated Home Buyer Holdings, LLC,
+            content of the Website provided by Get Top Dollar Home Buyer,
             including, but not limited to, all text, photos, graphics, audio,
             software, webpage layouts or configurations, presentations in any
-            format and/or video is copyrighted by Elevated Home Buyer Holdings,
-            LLC., or its affiliates or subsidiaries. Copyright © 2013-2019
-            Elevated Home Buyer Holdings, LLC. All rights reserved.
+            format and/or video is copyrighted by Get Top Dollar Home Buyer,
+			or its affiliates or subsidiaries. Copyright © 2025
+            Get Top Dollar Home Buyer. All rights reserved.
           </p>
           <p>
             No portion of the Content or other materials may be directly or
