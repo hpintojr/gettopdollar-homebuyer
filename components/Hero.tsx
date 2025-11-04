@@ -1,24 +1,25 @@
+// components/Hero.tsx
 import Image from 'next/image';
+import ContactForm from './ContactForm'; // Import the ContactForm
 
 export default function Hero() {
   return (
-    // Keep relative context, fixed height, and overflow-hidden
-    <section className="bg-brandDark relative z-10 h-[875px] overflow-hidden md:relative">
-      {/* Container is relative */}
-      <div className="max-w-6xl mx-auto px-4 h-full flex flex-col justify-center md:flex-row md:items-center md:gap-8 relative"> 
+    // Adjusted height for content, remove overflow-hidden to prevent form shadow clipping
+    <section className="bg-brandDark relative z-10 py-16 md:py-24">
+      {/* Container updated to a 2-column grid */}
+      <div className="max-w-6xl mx-auto px-4 h-full grid grid-cols-1 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16">
         
-        {/* Text Content Column - Z-index 20 */}
-        {/* Changed lg:w-7/12 to lg:w-4/5 */}
-        <div className="w-full md:w-6/12 lg:w-4/5 md:pr-10 lg:pr-16 flex-shrink-0 relative z-20"> 
+        {/* Column 1: Text Content - Z-index 20 */}
+        <div className="w-full relative z-20 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-snug">
             Turn Your <span className="text-brandPrimary">House</span> Into <span className="text-brandPrimary">Cash</span> Fast
           </h1>
-          <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl">
+          <p className="mt-4 md:mt-5 text-white max-w-xl text-lg md:text-xl mx-auto md:mx-0">
             Our straightforward process makes it easy to sell your home quickly and walk away with peace of mind.
           </p>
 
-          <ul className="mt-6 md:mt-8 space-y-4 text-white text-lg">
-             <li className="flex items-start">
+          <ul className="mt-6 md:mt-8 space-y-4 text-white text-lg max-w-lg mx-auto md:mx-0">
+             <li className="flex items-start text-left">
                <Image 
                  src="/checkmark.png" 
                  alt="checkmark" 
@@ -31,7 +32,7 @@ export default function Hero() {
                  <span className="text-white text-base">Get a same-day offer.</span> 
                </div>
              </li>
-             <li className="flex items-start">
+             <li className="flex items-start text-left">
                <Image 
                  src="/checkmark.png" 
                  alt="checkmark" 
@@ -44,7 +45,7 @@ export default function Hero() {
                  <span className="text-white text-base">We buy houses as-is.</span>
                </div>
              </li>
-             <li className="flex items-start">
+             <li className="flex items-start text-left">
                <Image 
                  src="/checkmark.png" 
                  alt="checkmark" 
@@ -57,7 +58,7 @@ export default function Hero() {
                  <span className="text-white text-base">No commissions, no listings, no delays.</span>
                </div>
              </li>
-             <li className="flex items-start">
+             <li className="flex items-start text-left">
                 <Image 
                   src="/checkmark.png" 
                   alt="checkmark" 
@@ -72,27 +73,12 @@ export default function Hero() {
              </li>
           </ul>
 
-          <div className="mt-8 md:mt-10">
-            <a href="#form" className="inline-block px-8 py-4 rounded-lg bg-brandPrimary text-white font-bold text-xl transition-all hover:bg-brandPrimaryDark shadow-xl shadow-brandPrimary/30">
-              Get My Cash Offer Now &rarr; 
-            </a>
-          </div>
+          {/* CTA Button DIV REMOVED */}
         </div>
 
-        {/* Image Column - ABSOLUTE POSITIONED FOR DESKTOP */}
-        {/* Adjusted positioning */}
-        <div className="md:absolute md:right-[-245px] md:top-[100px] md:w-auto mt-12 md:mt-[50px] relative z-10"> 
-           <div className="bg-transparent rounded-xl p-0">
-             {/* Kept md:max-w-[52rem] */}
-             <Image 
-               src="/view-3d-house-model.png" 
-               alt="Modern House Model" 
-               width={971} 
-               height={971} 
-               className="w-full h-auto max-w-sm sm:max-w-md md:max-w-[52rem] mx-auto" 
-               priority 
-             />
-           </div>
+        {/* Column 2: Contact Form - Z-index 10 */}
+        <div className="relative z-10 mt-12 md:mt-0">
+           <ContactForm />
          </div>
       </div>
     </section>

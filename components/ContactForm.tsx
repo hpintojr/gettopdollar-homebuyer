@@ -1,13 +1,20 @@
+// components/ContactForm.tsx
 "use client";
 import { useState } from "react";
+import Link from "next/link"; // Import Link for legal pages
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", address: "" });
   const [status, setStatus] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
+  const [agreed, setAgreed] = useState(false); // State for the checkbox
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (!agreed) {
+      setStatus("You must agree to the terms and privacy policy.");
+      return;
+    }
     setLoading(true);
     setStatus(null);
 
@@ -21,6 +28,7 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus("Request sent. We will contact you shortly.");
         setForm({ name: "", email: "", phone: "", address: "" });
+        setAgreed(false); // Reset checkbox
       } else {
         setStatus(data?.error || "Failed to submit. Try again.");
       }
@@ -60,10 +68,41 @@ export default function ContactForm() {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-brandLight placeholder:text-brandText" placeholder="Property Address" rows={3} />
       </div>
 
+      {/* --- New Checkbox Section --- */}
+      <div className="space-y-2">
+        <div className="flex items-start gap-2">
+          <input
+            id="terms-agree"
+            name="terms-agree"
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            className="h-5 w-5 mt-1 rounded border-gray-300 text-brandPrimary focus:ring-brandPrimary flex-shrink-0"
+          />
+          <label htmlFor="terms-agree" className="text-xs text-gray-600">
+            I agree to the{" "}
+            <Link href="/terms-of-use" target="_blank" className="underline text-brandPrimary hover:text-brandPrimaryDark">
+              Terms & Conditions
+            </Link>{" "}
+            and{" "}
+            <Link href="/privacy-policy" target="_blank" className="underline text-brandPrimary hover:text-brandPrimaryDark">
+              Privacy Policy
+            </Link>
+            . By submitting this form, you consent to receive SMS messages and/or
+            calls and/or emails from Elevated Home Buyer Holdings, LLC. Message
+            frequency varies. To unsubscribe. follow the instructions provided in
+            our communications. Msg & data rates may apply for SMS. Your
+            information is secure and will not be sold to third parties. Text
+            HELP for HELP. text STOP to cancel.
+          </label>
+        </div>
+      </div>
+      {/* --- End New Checkbox Section --- */}
+
       <div>
-        {/* Updated Button Style: White background, dark text */}
-        <button type="submit" disabled={loading}
-          className="w-full inline-flex justify-center items-center px-8 py-4 rounded-lg bg-white text-brandDark font-bold text-xl transition-all hover:bg-gray-100 shadow-xl border border-gray-200">
+        {/* Updated Button Style: Disabled state added */}
+        <button type="submit" disabled={loading || !agreed}
+          className="w-full inline-flex justify-center items-center px-8 py-4 rounded-lg bg-white text-brandDark font-bold text-xl transition-all hover:bg-gray-100 shadow-xl border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed">
           {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
