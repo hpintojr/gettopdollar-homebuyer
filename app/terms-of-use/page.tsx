@@ -61,7 +61,7 @@ export default function TermsOfUse() {
             sponsors, and advertisers of products or services (“Vendors”),
             pursuant to which Elevated Home Buyer may link to or
             display information, advertisements, discounts, products, goods, or
-            services offered by the Vendors (“Vendor Content”). Get Top Dollar 
+            services offered by the Vendors (“Vendor Content”). Elevated  
 			Home Buyer does not guarantee the availability or accuracy of
             any such Vendor Content or offers, nor does it endorse, guarantee nor
             insure any Vendor products or services.
