@@ -140,9 +140,9 @@ function TrustedBy() {
                <a href="#form" className="inline-block px-6 py-3 rounded-lg bg-brandPrimary text-white font-bold text-lg transition-all hover:bg-brandPrimaryDark shadow-md">
                  Get My Cash Offer
                </a>
-               <a href="tel:+18016602281" className="inline-block px-6 py-3 rounded-lg border border-brandText text-brandText font-bold text-lg hover:bg-brandLight">
+               {/*<a href="tel:+18016602281" className="inline-block px-6 py-3 rounded-lg border border-brandText text-brandText font-bold text-lg hover:bg-brandLight">
                  (801) 660-2281
-               </a>
+               </a>*/}
             </div>
           </div>
         </div>
