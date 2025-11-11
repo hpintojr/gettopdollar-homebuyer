@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Get Top Dollar Home Buyer',
-  description: 'Sell your house fast for top dollar with no repairs or commissions.',
+  title: 'Elevated Home Buyer',
+  description: 'Sell your house fast with Elevated Home Buyer with no repairs or commissions.',
 };
 
 export default function RootLayout({
