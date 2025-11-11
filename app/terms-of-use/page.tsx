@@ -38,8 +38,8 @@ export default function TermsOfUse() {
 
           <h2>1. CERTIFICATION OF USER.</h2>
           <p>
-            By using or attempting to use this Website, you certify to Get Top 
-			Dollar Home Buyer that you are a resident of the United States
+            By using or attempting to use this Website, you certify to Elevated  
+			Home Buyer that you are a resident of the United States
             or otherwise authorized to conduct business in the United States, are
             at least 18 years of age or older and have the legal capacity to
             enter into this Agreement.
