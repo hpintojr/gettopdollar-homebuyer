@@ -141,7 +141,7 @@ function TrustedBy() {
                  Get My Cash Offer
                </a>
                <a href="tel:+18016602281" className="inline-block px-6 py-3 rounded-lg border border-brandText text-brandText font-bold text-lg hover:bg-brandLight">
-                 (801)660-2281
+                 (801) 660-2281
                </a>
             </div>
           </div>
