@@ -89,7 +89,7 @@ export default function ContactForm() {
               Privacy Policy
             </Link>
             . By submitting this form, you consent to receive SMS messages and/or
-            calls and/or emails from Get Top Dollar Home Buyer. Message
+            calls and/or emails from Elevated Home Buyer. Message
             frequency varies. To unsubscribe. follow the instructions provided in
             our communications. Msg & data rates may apply for SMS. Your
             information is secure and will not be sold to third parties. Text

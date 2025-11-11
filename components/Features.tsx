@@ -30,7 +30,7 @@ export default function Features() {
     <div id="why-choose-us" className="bg-white pt-16"> 
       <div className="max-w-6xl mx-auto px-4 relative"> 
         <h2 className="text-4xl font-bold text-brandText text-center mb-12">
-          <span className="text-brandPrimary">Why Choose</span> Get Top Dollar Home Buyer?
+          <span className="text-brandPrimary">Why Choose</span> Elevated Home Buyer?
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">

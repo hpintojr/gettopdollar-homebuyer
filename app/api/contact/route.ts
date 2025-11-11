@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     // Mailjet supports SMTP using API key and secret as username/password
     const MAIL_SMTP_USER = process.env.MAIL_SMTP_USER; // Mailjet API key
     const MAIL_SMTP_PASS = process.env.MAIL_SMTP_PASS; // Mailjet secret
-    const MAIL_FROM = process.env.MAIL_FROM || "no-reply@gettopdollarhomebuyer.com";
+    const MAIL_FROM = process.env.MAIL_FROM || "no-reply@elevatedhomebuyer.com";
     const MAIL_TO = process.env.MAIL_TO || "hpintojr@gmail.com";
 
     if (MAIL_SMTP_USER && MAIL_SMTP_PASS) {
