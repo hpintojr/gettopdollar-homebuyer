@@ -17,7 +17,7 @@ export default function Header() {
   <a href="/#our-process" className="text-brandText hover:text-brandPrimary transition-colors">Our Process</a>
   <a href="/#testimonials" className="text-brandText hover:text-brandPrimary transition-colors">Testimonials</a>
 
-  {/* <a href="tel:+13855336823" className="inline-block px-4 py-2 rounded-md border border-brandText text-brandText font-semibold hover:bg-brandLight">(385) 533-6823</a> */}
+  <a href="tel:+13855336823" className="inline-block px-4 py-2 rounded-md border border-brandText text-brandText font-semibold hover:bg-brandLight">(385) 533-6823</a>
 
   {/* Get Offer Button - uses new brandPrimary color */}
   <a href="/#form" className="px-4 py-2 rounded-md bg-brandPrimary text-white font-semibold hover:bg-brandPrimaryDark">Get Offer</a>
