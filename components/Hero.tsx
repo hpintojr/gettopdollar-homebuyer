@@ -77,7 +77,16 @@ export default function Hero() {
              </li>
           </ul>
 
-          {/* CTA Button DIV REMOVED */}
+          {/* CTA Phone Number */}
+          <div className="mt-8 md:mt-10">
+            <p className="text-white text-lg mb-2">Call us directly:</p>
+            <a 
+              href="tel:3855336823" 
+              className="text-3xl md:text-4xl font-extrabold text-brandPrimary hover:text-white transition-colors"
+            >
+              (385) 533-6823
+            </a>
+          </div>
         </div>
 
         {/* Column 2: Contact Form - Z-index 10 */}
