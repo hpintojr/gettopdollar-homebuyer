@@ -48,12 +48,14 @@ export default function ContactForm() {
   };
 
   return (
-    // Reduced padding (py-12 instead of py-20) to tighten white space
-    <section id="contact" className="py-12 bg-gray-50">
+    <section id="contact">
       <div className="container mx-auto px-4 max-w-2xl">
         {/* Form Container with bounding box and rounded corners */}
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-          <h2 className="text-3xl font-extrabold text-center mb-6 text-blue-900 uppercase tracking-tight">
+          <h2 
+            className="text-3xl font-extrabold text-center mb-6 uppercase tracking-tight"
+            style={{ color: "rgb(57 71 85 / var(--tw-text-opacity, 1))" }}
+          >
             Get Your Cash Offer
           </h2>
           
@@ -104,7 +106,7 @@ export default function ContactForm() {
                   onChange={(e) => setForm({ ...form, agreeTransactional: e.target.checked })}
                 />
                 <span>
-                  I agree to receive transactional or conversational communications from Elevated Home Buyer via text messages, phone calls, and emails related to my real estate inquiry... [etc]
+                  I agree to receive transactional or conversational communications from Elevated Home Buyer via text messages, phone calls, and emails related to my real estate inquiry, such as property details, responses, and appointment confirmations. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for promotional purposes.
                 </span>
               </label>
 
@@ -116,7 +118,7 @@ export default function ContactForm() {
                   onChange={(e) => setForm({ ...form, agreeMarketing: e.target.checked })}
                 />
                 <span>
-                  I agree to receive marketing communications from Elevated Home Buyer via text messages, phone calls, and emails... [etc]
+                  I agree to receive marketing communications from Elevated Home Buyer via text messages, phone calls, and emails, including property offers, promotions, and other real estate-related marketing. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for marketing purposes.
                 </span>
               </label>
 
@@ -133,7 +135,6 @@ export default function ContactForm() {
               </label>
             </div>
 
-            {/* Updated Gold/Yellow Button */}
             <button
               type="submit"
               className="w-full bg-[#FFBF00] hover:bg-[#E6AC00] text-blue-900 font-black py-4 rounded-lg shadow-lg transform active:scale-[0.98] transition-all duration-200 mt-4 uppercase tracking-widest text-lg"
