@@ -78,9 +78,7 @@ function Comparison() {
   );
 }
 
-// Re-added the TrustedBy component definition
 function TrustedBy() {
-  // Added id="trusted-by" for potential navigation
   const situations = [
     "Inherited an unwanted property",
     "Tired of the landlord life",
@@ -95,7 +93,6 @@ function TrustedBy() {
   ];
 
   return (
-    // Changed background to brandOffWhite to match original site section bg
     <section id="trusted-by" className="pt-16 bg-brandOffWhite"> 
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-brandDark mb-12 text-center">
@@ -103,7 +100,6 @@ function TrustedBy() {
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Image */}
           <div>
             <Image 
               src="/homeowner_holding_keys.jpg" 
@@ -114,7 +110,6 @@ function TrustedBy() {
             />
           </div>
 
-          {/* Right Column: Text & List */}
           <div className="text-brandText">
             <p className="text-lg mb-6">
               No matter your situation, <strong>Elevated Home Buyer</strong> is here to help you sell your home quickly and without stress. We've guided homeowners through all kinds of challenges — and we can do the same for you.
@@ -124,7 +119,7 @@ function TrustedBy() {
             </h3>
             <div className="grid grid-cols-2 gap-x-6 gap-y-3">
               {situations.map((item) => (
-                <div key={item} className="p-3 bg-white rounded-md shadow-sm text-brandText border border-gray-200"> {/* Changed bg to white */}
+                <div key={item} className="p-3 bg-white rounded-md shadow-sm text-brandText border border-gray-200"> 
                   {item}
                 </div>
               ))}
@@ -132,17 +127,13 @@ function TrustedBy() {
             <p className="text-lg mt-6 font-semibold text-brandDark">
               Whatever the reason — we're here to make it easy.
             </p>
-            <p className="text-lg mt-4"> {/* Added extra paragraph */}
+            <p className="text-lg mt-4"> 
               Get a fair, no-obligation cash offer and move forward on your terms.
             </p>
-            {/* Optional Buttons like original site */}
             <div className="mt-8 flex gap-4">
                <a href="#form" className="inline-block px-6 py-3 rounded-lg bg-brandPrimary text-white font-bold text-lg transition-all hover:bg-brandPrimaryDark shadow-md">
                  Get My Cash Offer
                </a>
-               {/*<a href="tel:+18016602281" className="inline-block px-6 py-3 rounded-lg border border-brandText text-brandText font-bold text-lg hover:bg-brandLight">
-                 (801) 660-2281
-               </a>*/}
             </div>
           </div>
         </div>
@@ -151,8 +142,6 @@ function TrustedBy() {
   );
 }
 
-
-// Kept original Testimonials structure
 function Testimonials() {
   return (
     <section id="testimonials" className="pt-16 bg-white"> 
@@ -164,12 +153,10 @@ function Testimonials() {
             <p className="italic mb-4 text-xl">“Fast, Fair, and Hassle-Free! I needed to sell my home quickly due to a job relocation, and Elevated Home Buyer made it unbelievably easy. No showings, no repairs, and they closed in less than two weeks.”</p>
             <p className="font-semibold text-brandPrimary">— Danielle M., Austin, TX</p>
         </div>
-         {/* Add more testimonial blocks or a carousel component here */}
       </div>
     </section>
   );
 }
-
 
 // --- Main Page Assembly ---
 
@@ -182,11 +169,9 @@ export default function Home() {
         <Features /> 
         <Comparison />
         <OurProcess />
-        {/* Added TrustedBy section before Testimonials */}
         <TrustedBy /> 
         <Testimonials /> 
         
-        {/* Kept Contact Form Section at the end */}
         <section id="form" className="bg-brandDark pt-16 pb-16">
           <div className="max-w-6xl mx-auto px-4">
             <div className="md:flex md:gap-12 md:items-center">
@@ -210,9 +195,12 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="md:w-96 mx-auto flex-shrink-0">
+              
+              {/* FIXED: Replaced "md:w-96 flex-shrink-0" with "w-full md:flex-1 max-w-lg" */}
+              <div className="w-full md:flex-1 max-w-lg mx-auto">
                 <ContactForm />
               </div>
+
             </div>
           </div>
         </section>
