@@ -1,113 +1,143 @@
-// components/ContactForm.tsx
 "use client";
 import { useState } from "react";
-import Link from "next/link"; // Import Link for legal pages
+import Link from "next/link";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", address: "" });
-  const [status, setStatus] = useState<null | string>(null);
-  const [loading, setLoading] = useState(false);
-  const [agreed, setAgreed] = useState(false); // State for the checkbox
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    message: "",
+    agreeTransactional: false,
+    agreeMarketing: false,
+    agreeTermsPrivacy: false,
+  });
 
-  async function submit(e: React.FormEvent) {
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!agreed) {
-      setStatus("You must agree to the terms and privacy policy.");
+    
+    // Validating all three agreements are checked
+    if (!form.agreeTransactional || !form.agreeMarketing || !form.agreeTermsPrivacy) {
+      setStatus("Please check all agreement boxes to continue.");
       return;
     }
-    setLoading(true);
-    setStatus(null);
+
+    setStatus("Sending...");
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
+        body: JSON.stringify(form),
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
       });
-      const data = await res.json();
+
       if (res.ok) {
-        setStatus("Request sent. We will contact you shortly.");
-        setForm({ name: "", email: "", phone: "", address: "" });
-        setAgreed(false); // Reset checkbox
+        setStatus("Success! We will contact you shortly.");
+        setForm({
+          name: "", email: "", phone: "", address: "", message: "",
+          agreeTransactional: false, agreeMarketing: false, agreeTermsPrivacy: false,
+        });
       } else {
-        setStatus(data?.error || "Failed to submit. Try again.");
+        setStatus("Failed to send. Please try again.");
       }
-    } catch (err) {
-      setStatus("Network error. Try again.");
-    } finally {
-      setLoading(false);
+    } catch (error) {
+      setStatus("An error occurred.");
     }
-  }
+  };
 
   return (
-    <form id="contact" onSubmit={submit} className="space-y-4 p-6 bg-white rounded-xl shadow-2xl">
-      <h3 className="text-2xl font-bold text-brandPrimary text-center mb-4">
-        Get A Fast &amp; Fair Cash Offer Today
-      </h3>
-      <div>
-        <label className="hidden text-sm font-medium text-gray-700">Full name</label>
-        <input required value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-brandLight placeholder:text-brandText" placeholder="Full Name" />
-      </div>
-
-      <div>
-        <label className="hidden text-sm font-medium text-gray-700">Phone</label>
-        <input required value={form.phone} onChange={(e) => setForm({...form, phone: e.target.value})}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-brandLight placeholder:text-brandText" placeholder="Phone Number" />
-      </div>
-
-      <div>
-        <label className="hidden text-sm font-medium text-gray-700">Email</label>
-        <input required type="email" value={form.email} onChange={(e) => setForm({...form, email: e.target.value})}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-brandLight placeholder:text-brandText" placeholder="Email" />
-      </div>
-
-      <div>
-        <label className="hidden text-sm font-medium text-gray-700">Property address</label>
-        <textarea required value={form.address} onChange={(e) => setForm({...form, address: e.target.value})}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-3 bg-brandLight placeholder:text-brandText" placeholder="Property Address" rows={3} />
-      </div>
-
-      {/* --- New Checkbox Section --- */}
-      <div className="space-y-2">
-        <div className="flex items-start gap-2">
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-2xl bg-white p-8 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Get Your Cash Offer</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            id="terms-agree"
-            name="terms-agree"
-            type="checkbox"
-            checked={agreed}
-            onChange={(e) => setAgreed(e.target.checked)}
-            className="h-5 w-5 mt-1 rounded border-gray-300 text-brandPrimary focus:ring-brandPrimary flex-shrink-0"
+            type="text"
+            placeholder="Full Name"
+            className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-600 outline-none"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            required
           />
-          <label htmlFor="terms-agree" className="text-xs text-gray-600">
-            I agree to the{" "}
-            <Link href="/terms-of-use" target="_blank" className="underline text-brandPrimary hover:text-brandPrimaryDark">
-              Terms & Conditions
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy-policy" target="_blank" className="underline text-brandPrimary hover:text-brandPrimaryDark">
-              Privacy Policy
-            </Link>
-            . By submitting this form, you consent to receive SMS messages and/or
-            calls and/or emails from Elevated Home Buyer. Message
-            frequency varies. To unsubscribe. follow the instructions provided in
-            our communications. Msg & data rates may apply for SMS. Your
-            information is secure and will not be sold to third parties. Text
-            HELP for HELP. text STOP to cancel.
-          </label>
-        </div>
-      </div>
-      {/* --- End New Checkbox Section --- */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-600 outline-none"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-600 outline-none"
+              value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
+              required
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Property Address"
+            className="w-full p-3 border rounded focus:ring-2 focus:ring-blue-600 outline-none"
+            value={form.address}
+            onChange={(e) => setForm({ ...form, address: e.target.value })}
+            required
+          />
+          
+          <div className="space-y-4 mt-6 text-xs text-gray-700">
+            {/* Checkbox 1: Transactional */}
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                className="mt-1"
+                checked={form.agreeTransactional}
+                onChange={(e) => setForm({ ...form, agreeTransactional: e.target.checked })}
+              />
+              <span>
+                I agree to receive transactional or conversational communications from Elevated Home Buyer via text messages, phone calls, and emails related to my real estate inquiry, such as property details, responses, and appointment confirmations. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for promotional purposes.
+              </span>
+            </label>
 
-      <div>
-        {/* Updated Button Style: Disabled state added */}
-        <button type="submit" disabled={loading || !agreed}
-          className="w-full inline-flex justify-center items-center px-8 py-4 rounded-lg bg-white text-brandDark font-bold text-xl transition-all hover:bg-gray-100 shadow-xl border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed">
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </div>
+            {/* Checkbox 2: Marketing */}
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                className="mt-1"
+                checked={form.agreeMarketing}
+                onChange={(e) => setForm({ ...form, agreeMarketing: e.target.checked })}
+              />
+              <span>
+                I agree to receive marketing communications from Elevated Home Buyer via text messages, phone calls, and emails, including property offers, promotions, and other real estate-related marketing. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for marketing purposes.
+              </span>
+            </label>
 
-      {status && <p className="text-sm text-center text-gray-700">{status}</p>}
-    </form>
+            {/* Checkbox 3: T&C and Privacy */}
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                className="mt-1"
+                checked={form.agreeTermsPrivacy}
+                onChange={(e) => setForm({ ...form, agreeTermsPrivacy: e.target.checked })}
+              />
+              <span>
+                I agree to the <Link href="/terms-of-use" className="text-blue-600 underline">Terms & Conditions</Link> and <Link href="/privacy-policy" className="text-blue-600 underline">Privacy Policy</Link>.
+              </span>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition duration-300 mt-4"
+          >
+            GET MY CASH OFFER
+          </button>
+          {status && <p className="text-center mt-4 font-medium text-blue-800">{status}</p>}
+        </form>
+      </div>
+    </section>
   );
 }
