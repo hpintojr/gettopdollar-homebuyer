@@ -18,10 +18,9 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.agreeTransactional || !form.agreeMarketing || !form.agreeTermsPrivacy) {
-      setStatus("Please check all agreement boxes to continue.");
-      return;
-    }
+    
+    // Validation requirement removed to make consent checkboxes optional
+    
     setStatus("Sending...");
     try {
       const res = await fetch("/api/contact", {
