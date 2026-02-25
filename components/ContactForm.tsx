@@ -50,13 +50,16 @@ export default function ContactForm() {
   return (
     <section id="contact">
       <div className="container mx-auto px-4 max-w-2xl">
-        {/* Form Container with bounding box and rounded corners */}
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+          {/* Updated Title with Gold RGB and Text Shadow */}
           <h2 
             className="text-3xl font-extrabold text-center mb-6 uppercase tracking-tight"
-            style={{ color: "rgb(57 71 85 / var(--tw-text-opacity, 1))" }}
+            style={{ 
+              color: "rgb(252 182 20 / var(--tw-text-opacity, 1))",
+              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.15)" 
+            }}
           >
-            Get Your Cash Offer
+            Get A Fast & Fair Cash Offer Today
           </h2>
           
           <form onSubmit={handleSubmit} className="space-y-4">
