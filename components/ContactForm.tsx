@@ -51,12 +51,12 @@ export default function ContactForm() {
     <section id="contact">
       <div className="container mx-auto px-4 max-w-2xl">
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-          {/* Updated Title with Gold RGB and Text Shadow */}
+          {/* Updated Title with requested shadow: 1px 2px 4px */}
           <h2 
             className="text-3xl font-extrabold text-center mb-6 uppercase tracking-tight"
             style={{ 
               color: "rgb(252 182 20 / var(--tw-text-opacity, 1))",
-              textShadow: "1px 1px 2px rgba(0, 0, 0, 0.15)" 
+              textShadow: "1px 2px 4px rgba(0, 0, 0, 0.15)" 
             }}
           >
             Get A Fast & Fair Cash Offer Today
@@ -100,7 +100,7 @@ export default function ContactForm() {
               required
             />
             
-            <div className="space-y-4 mt-6 text-[11px] leading-relaxed text-gray-500">
+            <div className="space-y-4 mt-6 text-[11px] leading-relaxed text-gray-500 text-left">
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"
@@ -146,7 +146,7 @@ export default function ContactForm() {
             </button>
             
             {status && (
-              <p className="text-center mt-4 font-bold text-blue-900 animate-pulse">
+              <p className="text-center mt-4 font-bold text-blue-900">
                 {status}
               </p>
             )}
