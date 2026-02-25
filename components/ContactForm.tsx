@@ -44,7 +44,6 @@ export default function ContactForm() {
   };
 
   return (
-    // Removed "md:w-96" and "flex-shrink-0" to allow full desktop width
     <div className="w-full mx-auto py-12"> 
       <section id="contact">
         <div className="container mx-auto px-4 max-w-2xl">
@@ -108,7 +107,7 @@ export default function ContactForm() {
                     onChange={(e) => setForm({ ...form, agreeTransactional: e.target.checked })}
                   />
                   <span>
-                    I agree to receive transactional or conversational communications from Elevated Home Buyer via text messages, phone calls, and emails related to my real estate inquiry...
+                    I agree to receive transactional or conversational communications from Elevated Home Buyer via text messages, phone calls, and emails related to my real estate inquiry, such as property details, responses, and appointment confirmations. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for promotional purposes.
                   </span>
                 </label>
 
@@ -120,7 +119,7 @@ export default function ContactForm() {
                     onChange={(e) => setForm({ ...form, agreeMarketing: e.target.checked })}
                   />
                   <span>
-                    I agree to receive marketing communications from Elevated Home Buyer via text messages, phone calls, and emails...
+                    I agree to receive marketing communications from Elevated Home Buyer via text messages, phone calls, and emails, including property offers, promotions, and other real estate-related marketing. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg & data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for marketing purposes.
                   </span>
                 </label>
 
