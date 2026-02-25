@@ -1,85 +1,51 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
-type Body = {
-  name: string;
-  email: string;
-  phone: string;
-  address: string;
-};
-
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as Body;
+    const body = await request.json();
+    const { 
+      name, email, phone, address, message, 
+      agreeTransactional, agreeMarketing, agreeTermsPrivacy 
+    } = body;
 
-    // validate minimal
-    if (!body?.email || !body?.name) {
-      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
-    }
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
+      },
+    });
 
-    // 1) Forward to Pipedream test endpoint
-    const PIPEDREAM_URL = process.env.PIPEDREAM_URL;
-    if (PIPEDREAM_URL) {
-      try {
-        await fetch(PIPEDREAM_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...body, ts: new Date().toISOString() })
-        });
-      } catch (err) {
-        // do not fail; just log if present
-        console.error("Pipedream forward error", err);
-      }
-    }
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      // Added Jake to the recipient list
+      to: "hpintojr@gmail.com, jake@elevatedhomebuyer.com",
+      subject: `NEW LEAD: ${address}`,
+      text: `
+        NEW LEAD SUBMISSION
+        -------------------
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone}
+        Address: ${address}
+        Message: ${message || "No message provided"}
 
-    // 2) Send an email via SMTP (Mailjet)
-    // Mailjet supports SMTP using API key and secret as username/password
-    const MAIL_SMTP_USER = process.env.MAIL_SMTP_USER; // Mailjet API key
-    const MAIL_SMTP_PASS = process.env.MAIL_SMTP_PASS; // Mailjet secret
-    const MAIL_FROM = process.env.MAIL_FROM || "no-reply@elevatedhomebuyer.com";
-    const MAIL_TO = process.env.MAIL_TO || "hpintojr@gmail.com";
+        LEGAL AGREEMENTS & DISCLOSURES
+        ------------------------------
+        Transactional Consent: ${agreeTransactional ? "AGREED" : "NOT AGREED"}
+        Marketing Consent: ${agreeMarketing ? "AGREED" : "NOT AGREED"}
+        Terms & Privacy Agreement: ${agreeTermsPrivacy ? "AGREED" : "NOT AGREED"}
+        
+        Timestamp: ${new Date().toLocaleString()}
+      `,
+    };
 
-    if (MAIL_SMTP_USER && MAIL_SMTP_PASS) {
-      const transporter = nodemailer.createTransport({
-        host: "in-v3.mailjet.com",
-        port: 587,
-        secure: false,
-        auth: {
-          user: MAIL_SMTP_USER,
-          pass: MAIL_SMTP_PASS
-        }
-      });
+    await transporter.sendMail(mailOptions);
 
-      const html = `
-        <h3>New cash offer request</h3>
-        <p><strong>Name</strong>: ${escapeHtml(body.name)}</p>
-        <p><strong>Email</strong>: ${escapeHtml(body.email)}</p>
-        <p><strong>Phone</strong>: ${escapeHtml(body.phone)}</p>
-        <p><strong>Address</strong>: ${escapeHtml(body.address)}</p>
-        <p><small>Received: ${new Date().toISOString()}</small></p>
-      `;
-
-      await transporter.sendMail({
-        from: MAIL_FROM,
-        to: MAIL_TO,
-        subject: `New offer request from ${body.name}`,
-        html
-      });
-    } else {
-      console.warn("Mail SMTP not configured, skipping email send.");
-    }
-
-    return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.error(err);
-    return NextResponse.json({ error: err?.message || "Server error" }, { status: 500 });
+    return NextResponse.json({ message: "Success" }, { status: 200 });
+  } catch (error) {
+    console.error("Submission Error:", error);
+    return NextResponse.json({ message: "Failed" }, { status: 500 });
   }
-}
-
-// minimal escape
-function escapeHtml(input: string) {
-  return String(input || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
 }
